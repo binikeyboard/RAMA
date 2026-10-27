@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      SLA Maintenance Support Tiers | RAMA Computer & Network Solution
+    </title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ramaBlue: "#0F2C59",
+              ramaGold: "#D8A25E",
+              ramaGray: "#F8F9FA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Top Announcement Bar -->
+    <div
+      class="bg-ramaBlue text-white text-xs py-2 px-4 text-center font-medium"
+    >
+      <i class="fa-solid fa-bolt text-ramaGold mr-1"></i>
+      Guaranteed On-Site SLA Emergency Dispatch in Addis Ababa | Hotline: +251
+      (0) 911-000000
+    </div>
+    <!-- Navigation Bar (Connected to index.html & hardware-maintenance.html) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <a href="index.html" class="flex items-center space-x-3">
+          <div
+            class="bg-ramaBlue text-white p-3 rounded-lg font-bold text-xl tracking-wider"
+          >
+            RAMA
+          </div>
+          <div>
+            <span class="block text-lg font-bold text-ramaBlue leading-none"
+              >RAMA Solutions</span
+            >
+            <span class="text-xs text-gray-500 font-medium"
+              >Computer & Network Solution</span
+            >
+          </div>
+        </a>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700"
+        >
+          <a href="index.html" class="hover:text-ramaBlue transition">Home</a>
+          <a
+            href="hardware-maintenance.html"
+            class="hover:text-ramaBlue transition"
+            >Hardware & Maintenance</a
+          >
+          <a href="#tiers" class="hover:text-ramaBlue transition"
+            >SLA Packages</a
+          >
+          <a href="#matrix" class="hover:text-ramaBlue transition"
+            >Comparison Matrix</a
+          >
+          <a href="#sla-form" class="hover:text-ramaBlue transition"
+            >Sign-Up / Quote</a
+          >
+        </div>
+        <div>
+          <a
+            href="#sla-form"
+            class="bg-ramaGold hover:bg-yellow-600 text-white font-bold py-2.5 px-5 rounded-lg text-sm shadow transition"
+          >
+            Enroll in SLA Support
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero / Header Section -->
+    <section
+      class="bg-slate-900 text-white py-16 px-4 border-b border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="text-xs text-ramaGold font-medium mb-2 flex items-center space-x-2"
+        >
+          <a href="index.html" class="hover:underline">Home</a>
+          <span>/</span>
+          <a href="hardware-maintenance.html" class="hover:underline"
+            >Hardware & Maintenance</a
+          >
+          <span>/</span>
+          <span class="text-gray-300">SLA Support Tiers</span>
+        </div>
+        <h1 class="text-3xl lg:text-4xl font-extrabold mb-3">
+          Managed SLA IT Maintenance Tiers
+        </h1>
+        <p class="text-gray-300 text-sm max-w-3xl">
+          Structured Service Level Agreements (SLAs) designed to guarantee
+          maximum network uptime, rapid emergency dispatch, and proactive
+          hardware maintenance across Addis Ababa.
+        </p>
+      </div>
+    </section>
+    <!-- SLA Package Cards Section -->
+    <section id="tiers" class="py-16 max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold text-ramaGold uppercase tracking-wider"
+          >Predictable Retainer Models</span
+        >
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-ramaBlue mt-1">
+          Select Your SLA Maintenance Tier
+        </h2>
+        <p class="text-xs text-gray-600 max-w-2xl mx-auto mt-2">
+          All SLA plans include scheduled health audits, configuration backups,
+          and access to RAMA's local emergency spare-parts pool.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Bronze Tier -->
+        <div
+          class="bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition"
+        >
+          <div class="p-8">
+            <div class="flex justify-between items-center mb-4">
+              <span
+                class="text-xs font-bold bg-gray-100 text-gray-700 px-3 py-1 rounded-full uppercase"
+                >Standard Care</span
+              >
+              <i class="fa-solid fa-shield text-gray-400 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ramaBlue mb-1">Bronze SLA</h3>
+            <p class="text-xs text-gray-500 mb-6">
+              Designed for SMEs and non-critical office networks needing
+              periodic technical upkeep.
+            </p>
+            <div
+              class="border-t border-b border-gray-100 py-4 mb-6 space-y-2 text-xs"
+            >
+              <div class="flex justify-between">
+                <span class="text-gray-500">Emergency Response:</span>
+                <span class="font-bold text-gray-800">Next Business Day</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">NOC Monitoring:</span>
+                <span class="font-bold text-gray-800">Business Hours</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Preventive Audits:</span>
+                <span class="font-bold text-gray-800">Quarterly Visits</span>
+              </div>
+            </div>
+            <ul class="text-xs text-gray-700 space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> On-site
+                drop repair & cabling audits
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Remote
+                helpdesk support ticketing
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Router &
+                switch firmware patch updates
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i class="fa-solid fa-xmark text-gray-300 mr-2"></i> Dedicated
+                spare hardware reservation
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#sla-form"
+              class="w-full block bg-gray-200 hover:bg-gray-300 text-ramaBlue font-bold py-3 text-center rounded-lg text-xs transition"
+            >
+              Enroll in Bronze Plan
+            </a>
+          </div>
+        </div>
+        <!-- Silver Tier (Featured) -->
+        <div
+          class="bg-white rounded-2xl border-2 border-ramaGold shadow-xl flex flex-col justify-between overflow-hidden relative transform md:-translate-y-2"
+        >
+          <div
+            class="bg-ramaGold text-white text-xs font-bold py-1.5 text-center uppercase tracking-wider"
+          >
+            Most Popular Choice for Commercial Hubs
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-center mb-4">
+              <span
+                class="text-xs font-bold bg-amber-50 text-ramaGold px-3 py-1 rounded-full uppercase"
+                >Business Critical</span
+              >
+              <i class="fa-solid fa-shield-halved text-ramaGold text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ramaBlue mb-1">Silver SLA</h3>
+            <p class="text-xs text-gray-500 mb-6">
+              Built for expanding enterprises, commercial real estate, and hotel
+              networks.
+            </p>
+            <div
+              class="border-t border-b border-gray-100 py-4 mb-6 space-y-2 text-xs"
+            >
+              <div class="flex justify-between">
+                <span class="text-gray-500">Emergency Response:</span>
+                <span class="font-bold text-ramaBlue"
+                  >&lt; 4 Hours Guaranteed</span
+                >
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">NOC Monitoring:</span>
+                <span class="font-bold text-gray-800">12/5 Business NOC</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Preventive Audits:</span>
+                <span class="font-bold text-gray-800">Monthly Site Audits</span>
+              </div>
+            </div>
+            <ul class="text-xs text-gray-700 space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Guaranteed
+                &lt;4h field engineer dispatch
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Temporary
+                hardware swap from local pool
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> UPS
+                battery health & voltage testing
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Automated
+                weekly configuration backups
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 bg-amber-50 border-t border-amber-100">
+            <a
+              href="#sla-form"
+              class="w-full block bg-ramaGold hover:bg-yellow-600 text-white font-bold py-3 text-center rounded-lg text-xs shadow transition"
+            >
+              Enroll in Silver Plan
+            </a>
+          </div>
+        </div>
+        <!-- Gold Tier -->
+        <div
+          class="bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition"
+        >
+          <div class="p-8">
+            <div class="flex justify-between items-center mb-4">
+              <span
+                class="text-xs font-bold bg-blue-50 text-ramaBlue px-3 py-1 rounded-full uppercase"
+                >High Reliability</span
+              >
+              <i class="fa-solid fa-crown text-ramaBlue text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ramaBlue mb-1">Gold SLA</h3>
+            <p class="text-xs text-gray-500 mb-6">
+              Tailored for banks, hospitals, data centers, and mission-critical
+              infrastructure.
+            </p>
+            <div
+              class="border-t border-b border-gray-100 py-4 mb-6 space-y-2 text-xs"
+            >
+              <div class="flex justify-between">
+                <span class="text-gray-500">Emergency Response:</span>
+                <span class="font-bold text-red-600"
+                  >&lt; 2 Hours Priority</span
+                >
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">NOC Monitoring:</span>
+                <span class="font-bold text-gray-800">24/7/365 Continuous</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Preventive Audits:</span>
+                <span class="font-bold text-gray-800">Bi-Weekly On-Site</span>
+              </div>
+            </div>
+            <ul class="text-xs text-gray-700 space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Priority
+                &lt;2h emergency dispatch team
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Dedicated
+                hot-swappable active gear reserved
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Real-time
+                uptime & bandwidth reports
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-check text-green-500 mr-2"></i> Dual ISP
+                load-balancing & failover management
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#sla-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white font-bold py-3 text-center rounded-lg text-xs transition"
+            >
+              Enroll in Gold Plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Comprehensive Feature Comparison Matrix -->
+    <section id="matrix" class="bg-slate-100 py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-ramaBlue mb-2">
+            Detailed Feature Comparison
+          </h2>
+          <p class="text-xs text-gray-600">
+            Compare response times, monitoring scopes, and hardware replacement
+            provisions.
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-xl shadow border border-gray-200 overflow-x-auto"
+        >
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr
+                class="bg-ramaBlue text-white uppercase text-[11px] tracking-wider"
+              >
+                <th class="p-4">Feature / Protocol</th>
+                <th class="p-4 text-center">Bronze SLA</th>
+                <th class="p-4 text-center bg-blue-950 text-ramaGold">
+                  Silver SLA (Recommended)
+                </th>
+                <th class="p-4 text-center">Gold SLA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  Critical Outage (P1) Response
+                </td>
+                <td class="p-4 text-center text-gray-600">Next Business Day</td>
+                <td
+                  class="p-4 text-center font-bold text-ramaBlue bg-amber-50/50"
+                >
+                  &lt; 4 Hours
+                </td>
+                <td class="p-4 text-center font-bold text-red-600">
+                  &lt; 2 Hours Priority
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  Major Branch Issue (P2) Response
+                </td>
+                <td class="p-4 text-center text-gray-600">&lt; 24 Hours</td>
+                <td class="p-4 text-center bg-amber-50/50">&lt; 8 Hours</td>
+                <td class="p-4 text-center font-semibold">&lt; 4 Hours</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  On-Site Health Audits
+                </td>
+                <td class="p-4 text-center text-gray-600">Quarterly</td>
+                <td class="p-4 text-center bg-amber-50/50 font-semibold">
+                  Monthly
+                </td>
+                <td class="p-4 text-center font-semibold text-ramaBlue">
+                  Bi-Weekly
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  NOC Health Monitoring
+                </td>
+                <td class="p-4 text-center text-gray-600">
+                  Helpdesk Ticketing
+                </td>
+                <td class="p-4 text-center bg-amber-50/50">
+                  12/5 Business NOC
+                </td>
+                <td class="p-4 text-center font-semibold text-green-700">
+                  24/7/365 Continuous
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  Hardware Swap Pool Access
+                </td>
+                <td class="p-4 text-center text-gray-400">
+                  <i class="fa-solid fa-xmark"></i>
+                </td>
+                <td
+                  class="p-4 text-center bg-amber-50/50 text-green-600 font-semibold"
+                >
+                  <i class="fa-solid fa-check"></i> Standard Pool
+                </td>
+                <td class="p-4 text-center text-green-600 font-bold">
+                  <i class="fa-solid fa-check"></i> Reserved Hot-Swap Pool
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  UPS & Power Resilience Check
+                </td>
+                <td class="p-4 text-center text-gray-600">
+                  Basic Battery Check
+                </td>
+                <td class="p-4 text-center bg-amber-50/50">
+                  Full Voltage & Runtime Audit
+                </td>
+                <td class="p-4 text-center font-semibold text-ramaBlue">
+                  Full Audit & Auto-Switch Test
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-gray-800">
+                  Configuration Backups
+                </td>
+                <td class="p-4 text-center text-gray-600">Monthly Snapshot</td>
+                <td class="p-4 text-center bg-amber-50/50">Weekly Snapshot</td>
+                <td class="p-4 text-center font-semibold">
+                  Real-Time / Daily Automated
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- SLA Enrollment Form -->
+    <section id="sla-form" class="py-16 max-w-4xl mx-auto px-4">
+      <div
+        class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-200"
+      >
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-ramaBlue">
+            Enroll in SLA Maintenance or Request Custom Proposal
+          </h3>
+          <p class="text-xs text-gray-500 mt-1">
+            Our technical team will conduct an initial site assessment in Addis
+            Ababa before contract activation.
+          </p>
+        </div>
+        <form data-rama-form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Company / Organization Name</label
+              >
+              <input
+                type="text"
+                name="company_name"
+                required
+                placeholder="e.g. Nile Commercial Bank"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Contact Person & Title</label
+              >
+              <input
+                type="text"
+                name="contact_person"
+                required
+                placeholder="e.g. Bethlehem Tadesse (IT Director)"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                name="phone_number"
+                required
+                placeholder="+251 9..."
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Preferred SLA Tier</label
+              >
+              <select
+                name="preferred_tier"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none text-gray-700 font-medium"
+              >
+                <option>Silver SLA (&lt;4h Response - Recommended)</option>
+                <option>Gold SLA (&lt;2h Priority Response)</option>
+                <option>Bronze SLA (Next Business Day)</option>
+                <option>Custom Multi-Branch SLA Contract</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Estimated Network Devices</label
+              >
+              <input
+                type="text"
+                name="estimated_devices"
+                placeholder="e.g. 15 Switches, 2 Firewalls, 20 APs"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1"
+              >Facility Address / District in Addis Ababa</label
+            >
+            <input
+              type="text"
+              name="sub_city"
+              required
+              placeholder="e.g. Bole Sub-City, Woreda 03, near Atlas Hotel"
+              class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+            />
+          </div>
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="w-full bg-ramaBlue hover:bg-slate-900 text-white font-bold py-3.5 rounded-lg text-sm shadow transition"
+            >
+              Submit SLA Onboarding Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-ramaBlue text-white py-10 border-t border-slate-700">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-300"
+      >
+        <div class="mb-4 md:mb-0">
+          <span class="font-bold text-white text-sm"
+            >RAMA Computer & Network Solution</span
+          >
+          <p class="text-gray-400 mt-0.5">
+            SLA Maintenance Support Tiers | Addis Ababa, Ethiopia
+          </p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="hover:text-ramaGold transition"
+            >Home Page</a
+          >
+          <a
+            href="hardware-maintenance.html"
+            class="hover:text-ramaGold transition"
+            >Hardware & Maintenance</a
+          >
+          <a href="#tiers" class="hover:text-ramaGold transition"
+            >SLA Packages</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      async function submitRamaInquiry(form) {
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        const apiUrl =
+          window.location.protocol === 'file:'
+            ? 'http://127.0.0.1:8001/api/submit-sla'
+            : `${window.location.origin}/api/submit-sla`;
+        const endpoints = [apiUrl];
+
+        let lastError;
+
+        for (const endpoint of endpoints) {
+          try {
+            const response = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+              alert(data.message || 'Thank you! A RAMA network engineer will contact you shortly.');
+              form.reset();
+              return;
+            }
+
+            lastError = new Error(data.message || 'The server could not save your request.');
+          } catch (error) {
+            lastError = error;
+          }
+        }
+
+        console.error(lastError);
+        alert('Your request was not submitted. Start the RAMA backend and try again. ' + lastError.message);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-rama-form]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            submitRamaInquiry(form);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

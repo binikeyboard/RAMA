@@ -40,6 +40,14 @@ Open the site at <http://127.0.0.1:8001/> or the NOC dashboard at
 Workers can view records. Managers can view, add, update status, and delete
 inquiries.
 
+## GitHub Pages
+
+The public GitHub Pages site serves the static HTML pages only. GitHub Pages
+does not run the Python API or connect to MySQL, so inquiry submission and NOC
+dashboard data require the backend to be hosted separately and configured with
+a private database. Do not put database files, credentials, or password hashes
+in the public repository.
+
 ## Local-only files
 
 The populated local database, Python cache files, environment files, and

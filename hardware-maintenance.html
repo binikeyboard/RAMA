@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Hardware Supply & Maintenance Services | RAMA Computer & Network Solution
+    </title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ramaBlue: "#0F2C59",
+              ramaGold: "#D8A25E",
+              ramaGray: "#F8F9FA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Top Announcement Bar -->
+    <div
+      class="bg-ramaBlue text-white text-xs py-2 px-4 text-center font-medium"
+    >
+      <i class="fa-solid fa-bolt text-ramaGold mr-1"></i>
+      Certified IT Hardware Supply & SLA Maintenance in Addis Ababa | Dispatch:
+      +251 (0) 911-000000
+    </div>
+
+    <!-- Navigation Bar (Connected to index.html) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <a href="index.html" class="flex items-center space-x-3">
+          <div
+            class="bg-ramaBlue text-white p-3 rounded-lg font-bold text-xl tracking-wider"
+          >
+            RAMA
+          </div>
+          <div>
+            <span class="block text-lg font-bold text-ramaBlue leading-none"
+              >RAMA Solutions</span
+            >
+            <span class="text-xs text-gray-500 font-medium"
+              >Computer & Network Solution</span
+            >
+          </div>
+        </a>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700"
+        >
+          <a href="index.html" class="hover:text-ramaBlue transition">Home</a>
+          <a href="#catalog" class="hover:text-ramaBlue transition"
+            >Equipment Catalog</a
+          >
+          <a href="#maintenance" class="hover:text-ramaBlue transition"
+            >Maintenance & AMCs</a
+          >
+          <a href="index.html#slas" class="hover:text-ramaBlue transition"
+            >SLA Tiers</a
+          >
+          <a href="#request-form" class="hover:text-ramaBlue transition"
+            >Request Quote</a
+          >
+        </div>
+        <div>
+          <a
+            href="#request-form"
+            class="bg-ramaGold hover:bg-yellow-600 text-white font-bold py-2.5 px-5 rounded-lg text-sm shadow transition"
+          >
+            Request Parts / AMC Quote
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Breadcrumb Section -->
+    <section
+      class="bg-slate-900 text-white py-12 px-4 border-b border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="text-xs text-ramaGold font-medium mb-2 flex items-center space-x-2"
+        >
+          <a href="index.html" class="hover:underline">Home</a>
+          <span>/</span>
+          <span class="text-gray-300"> Hardware & Maintenance</span>
+        </div>
+        <h1 class="text-3xl lg:text-4xl font-extrabold mb-3">
+          IT Hardware Supply & Maintenance Services
+        </h1>
+        <p class="text-gray-300 text-sm max-w-3xl">
+          Combining direct procurement of certified active and passive
+          networking equipment with guaranteed SLA hardware maintenance across
+          commercial hubs in Addis Ababa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Equipment Catalog Section -->
+    <section id="catalog" class="py-16 max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold text-ramaGold uppercase tracking-wider"
+            >Certified Supply Lines</span
+          >
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-ramaBlue mt-1">
+            Networking Hardware & Material Catalog
+          </h2>
+        </div>
+        <p class="text-xs text-gray-500 mt-2 md:mt-0 max-w-md">
+          We maintain local buffer inventory in Addis Ababa for high-turnover
+          consumables to bypass global shipping and import queues.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Active Hardware -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition"
+        >
+          <div class="bg-ramaBlue text-white p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span
+                class="text-xs bg-white/20 text-white px-2.5 py-0.5 rounded-full font-medium"
+                >Active Equipment</span
+              >
+              <i class="fa-solid fa-network-wired text-ramaGold text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">Enterprise Active Gear</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-gray-600 mb-4">
+              Certified routers, managed switches, and enterprise wireless
+              solutions from industry-leading vendors (Cisco, MikroTik,
+              Ubiquiti, HP).
+            </p>
+            <ul class="text-xs text-gray-700 space-y-2.5 border-t pt-4">
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i> Core &
+                  Access Managed Switches</span
+                >
+                <span class="text-gray-400 text-[10px]">Gigabit / PoE+</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i> VPN
+                  Gateways & Firewalls</span
+                >
+                <span class="text-gray-400 text-[10px]">Cisco / MikroTik</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Enterprise Wi-Fi Access Points</span
+                >
+                <span class="text-gray-400 text-[10px]">Wi-Fi 6 / Wi-Fi 7</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Passive Cabling & Racks -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition"
+        >
+          <div class="bg-slate-800 text-white p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span
+                class="text-xs bg-white/20 text-white px-2.5 py-0.5 rounded-full font-medium"
+                >Passive Supplies</span
+              >
+              <i class="fa-solid fa-diagram-project text-ramaGold text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">Cabling & Rack Accessories</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-gray-600 mb-4">
+              High-density structured cabling supplies, server cabinets, and
+              optical fiber links certified to Fluke performance standards.
+            </p>
+            <ul class="text-xs text-gray-700 space-y-2.5 border-t pt-4">
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i> Cat6 /
+                  Cat7 Copper Cabling</span
+                >
+                <span class="text-gray-400 text-[10px]">UTP / FTP Reels</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i> Single
+                  & Multi-Mode Fiber</span
+                >
+                <span class="text-gray-400 text-[10px]">Patch / Pig-Tails</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i> Server
+                  Cabinets & Patch Panels</span
+                >
+                <span class="text-gray-400 text-[10px]"
+                  >6U to 42U Enclosures</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Power & Battery Backup -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition"
+        >
+          <div class="bg-amber-700 text-white p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span
+                class="text-xs bg-white/20 text-white px-2.5 py-0.5 rounded-full font-medium"
+                >Power Protection</span
+              >
+              <i class="fa-solid fa-car-battery text-ramaGold text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">UPS & Surge Protection</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-gray-600 mb-4">
+              Heavy-duty power resilience hardware engineered to protect active
+              rack switches and servers against local grid instability.
+            </p>
+            <ul class="text-xs text-gray-700 space-y-2.5 border-t pt-4">
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Smart-UPS Systems (APC / Schneider)</span
+                >
+                <span class="text-gray-400 text-[10px]">1kVA - 10kVA</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i> Rack
+                  Power Distribution Units (PDUs)</span
+                >
+                <span class="text-gray-400 text-[10px]">Surge Protected</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span
+                  ><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Replacement Sealed Lead-Acid Batteries</span
+                >
+                <span class="text-gray-400 text-[10px]">12V Packs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maintenance & AMC Service Workflow -->
+    <section id="maintenance" class="bg-slate-100 py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold text-ramaGold uppercase tracking-wider"
+            >Proactive Hardware Care</span
+          >
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-ramaBlue mt-1">
+            Annual Maintenance Contracts (AMCs) & Repairs
+          </h2>
+          <p class="text-xs text-gray-600 max-w-2xl mx-auto mt-2">
+            Instead of waiting for unexpected failures, our AMC plans ensure
+            your network active gear is continuously monitored, cleaned,
+            updated, and backed up.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-200 text-center"
+          >
+            <div
+              class="w-10 h-10 bg-ramaBlue text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4"
+            >
+              1
+            </div>
+            <h4 class="font-bold text-sm mb-2">Quarterly Site Audits</h4>
+            <p class="text-xs text-gray-500">
+              Physical inspection of cable drops, temperature checks in server
+              rooms, and rack dust cleaning.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-200 text-center"
+          >
+            <div
+              class="w-10 h-10 bg-ramaBlue text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4"
+            >
+              2
+            </div>
+            <h4 class="font-bold text-sm mb-2">Firmware & Backups</h4>
+            <p class="text-xs text-gray-500">
+              Regular firewall rules, switch configuration backups, and security
+              patch installation.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-200 text-center"
+          >
+            <div
+              class="w-10 h-10 bg-ramaBlue text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4"
+            >
+              3
+            </div>
+            <h4 class="font-bold text-sm mb-2">&lt;4h SLA Dispatch</h4>
+            <p class="text-xs text-gray-500">
+              On-site field engineer dispatch within 2 to 4 hours across Bole,
+              Kazanchis, Kirkos, and Arada.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-200 text-center"
+          >
+            <div
+              class="w-10 h-10 bg-ramaBlue text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4"
+            >
+              4
+            </div>
+            <h4 class="font-bold text-sm mb-2">Spare Hardware Swap</h4>
+            <p class="text-xs text-gray-500">
+              Deploy temporary routers or switches from our local spare pool
+              during repairs or factory RMA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Request Form -->
+    <section id="request-form" class="py-16 max-w-4xl mx-auto px-4">
+      <div
+        class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-200"
+      >
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-ramaBlue">
+            Request Hardware Price Quote or AMC Support
+          </h3>
+          <p class="text-xs text-gray-500 mt-1">
+            Submit your requirement for immediate response from our technical
+            team in Addis Ababa.
+          </p>
+        </div>
+
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Contact Name</label
+              >
+              <input
+                type="text"
+                placeholder="e.g. Solomon Alemu"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Company / Organization</label
+              >
+              <input
+                type="text"
+                placeholder="e.g. Grand Hotel Addis"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                placeholder="+251 9..."
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Inquiry Type</label
+              >
+              <select
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none text-gray-600"
+              >
+                <option>Hardware Equipment Purchase Quote</option>
+                <option>Annual Maintenance Contract (AMC) Onboarding</option>
+                <option>Emergency Hardware Repair / Replacement</option>
+                <option>Structured Cabling & Rack Accessories</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1"
+              >Specific Hardware / Network Details</label
+            >
+            <textarea
+              rows="3"
+              placeholder="List required switch ports, cable reel quantities, server rack sizes, or current hardware issue..."
+              class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="button"
+              onclick="
+                alert(
+                  'Thank you for contacting RAMA Solutions! Our hardware & maintenance team will contact you within 2 business hours.',
+                )
+              "
+              class="w-full bg-ramaGold hover:bg-yellow-600 text-white font-bold py-3.5 rounded-lg text-sm shadow transition"
+            >
+              Submit Hardware / AMC Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ramaBlue text-white py-10 border-t border-slate-700">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-300"
+      >
+        <div class="mb-4 md:mb-0">
+          <span class="font-bold text-white text-sm"
+            >RAMA Computer & Network Solution</span
+          >
+          <p class="text-gray-400 mt-0.5">
+            Material Supply & Hardware Maintenance | Addis Ababa, Ethiopia
+          </p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="hover:text-ramaGold transition"
+            >Home Page</a
+          >
+          <a href="index.html#slas" class="hover:text-ramaGold transition"
+            >SLA Support Tiers</a
+          >
+          <a href="#catalog" class="hover:text-ramaGold transition"
+            >Hardware Catalog</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

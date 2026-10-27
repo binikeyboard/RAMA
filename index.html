@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      RAMA Computer & Network Solution | IT Hardware & SLA Maintenance Addis
+      Ababa
+    </title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ramaBlue: "#0F2C59",
+              ramaGold: "#D8A25E",
+              ramaGray: "#F8F9FA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Top Announcement Bar -->
+    <div
+      class="bg-ramaBlue text-white text-xs py-2 px-4 text-center font-medium"
+    >
+      <i class="fa-solid fa-bolt text-ramaGold mr-1"></i>
+      Guaranteed On-Site SLA Response Times Under 4 Hours in Addis Ababa |
+      Emergency Dispatch: +251 (0) 911-000000
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <div class="flex items-center space-x-3">
+          <div
+            class="bg-ramaBlue text-white p-3 rounded-lg font-bold text-xl tracking-wider"
+          >
+            RAMA
+          </div>
+          <div>
+            <span class="block text-lg font-bold text-ramaBlue leading-none"
+              >RAMA Solutions</span
+            >
+            <span class="text-xs text-gray-500 font-medium"
+              >Computer & Network Solution</span
+            >
+          </div>
+        </div>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700"
+        >
+          <a
+            href="hardware-maintenance.html"
+            class="hover:text-ramaBlue transition"
+            >Hardware & Maintenance</a
+          >
+          <a
+            href="sla-support-tiers.html"
+            class="hover:text-ramaBlue transition"
+            >SLA Support Tiers</a
+          >
+          <a
+            href="equipment-catalog.html"
+            class="hover:text-ramaBlue transition"
+            >Equipment Catalog</a
+          >
+          <a
+            href="about.html"
+            class="hover:text-ramaBlue transition"
+            >About RAMA</a
+          >
+        </div>
+        <div>
+          <a
+            href="#audit-form"
+            class="bg-ramaGold hover:bg-yellow-600 text-white font-bold py-2.5 px-5 rounded-lg text-sm shadow transition"
+          >
+            Book Free Network Audit
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative bg-gradient-to-r from-ramaBlue to-slate-800 text-white py-20 px-4"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <div>
+          <span
+            class="inline-block bg-white/10 text-ramaGold text-xs font-bold px-3 py-1 rounded-full mb-4 border border-ramaGold/30"
+          >
+            ONE-STOP IT INFRASTRUCTURE PARTNER
+          </span>
+          <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+            Eliminate Network Downtime & Supply Delays in Addis Ababa
+          </h1>
+          <p class="text-gray-300 text-base mb-8">
+            RAMA combines expert network engineering and hardware maintenance
+            with direct procurement of certified active gear and cabling. No
+            middleman, no vendor blame-shifting.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#audit-form"
+              class="bg-ramaGold hover:bg-yellow-600 text-white text-center font-bold py-3.5 px-6 rounded-lg text-sm shadow-lg transition"
+            >
+              Request Free Site Health Audit
+            </a>
+            <a
+              href="#slas"
+              class="bg-white/10 hover:bg-white/20 text-white text-center font-bold py-3.5 px-6 rounded-lg text-sm border border-white/20 transition"
+            >
+              Explore SLA Maintenance Tiers
+            </a>
+          </div>
+          <div
+            class="mt-8 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 text-xs text-gray-300"
+          >
+            <div>
+              <i class="fa-solid fa-shield-halved text-ramaGold mr-1"></i> SLA
+              Certified
+            </div>
+            <div>
+              <i class="fa-solid fa-truck-fast text-ramaGold mr-1"></i> Local
+              Buffer Stock
+            </div>
+            <div>
+              <i class="fa-solid fa-clock text-ramaGold mr-1"></i> &lt;4h
+              Response
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white text-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-100"
+        >
+          <h3 class="text-xl font-bold text-ramaBlue mb-2">
+            Request Hardware Quote or SLA Audit
+          </h3>
+          <p class="text-xs text-gray-500 mb-6">
+            Connect with a certified Cisco & MikroTik engineer in Addis Ababa.
+          </p>
+          <form id="audit-form" data-rama-form class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Company / Organization Name</label
+              >
+              <input
+                type="text"
+                name="company_name"
+                required
+                placeholder="e.g. Acme Commercial Ltd."
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1"
+                  >Phone Number</label
+                >
+                <input
+                  type="text"
+                  name="phone_number"
+                  required
+                  placeholder="+251 9..."
+                  class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1"
+                  >District / Sub-City</label
+                >
+                <input
+                  type="text"
+                  name="sub_city"
+                  required
+                  placeholder="e.g. Bole / Kazanchis"
+                  class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Primary Need</label
+              >
+              <select
+                name="primary_need"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none text-gray-600"
+              >
+                <option>Annual Maintenance Contract (AMC / SLA)</option>
+                <option>
+                  Hardware Procurement (Switches, Routers, Cables)
+                </option>
+                <option>Network Emergency Troubleshooting</option>
+                <option>Structured Cabling Installation</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-ramaBlue hover:bg-slate-900 text-white font-bold py-3.5 rounded-lg text-sm shadow transition"
+            >
+              Submit Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 1 Strategic Pillars Section -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-ramaBlue mb-3">
+          Core Services
+        </h2>
+        <p class="text-gray-600 text-sm max-w-2xl mx-auto">
+          Providing unified hardware maintenance and material supply for
+          businesses across Addis Ababa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pillar 1 -->
+        <div
+          class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition"
+        >
+          <div
+            class="w-12 h-12 bg-blue-50 text-ramaBlue rounded-lg flex items-center justify-center text-xl mb-6"
+          >
+            <i class="fa-solid fa-boxes-packing"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Hardware & Material Supply</h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Direct supply of certified active equipment and passive installation
+            supplies. We eliminate import queues by maintaining local safety
+            stock.
+          </p>
+          <ul class="text-xs text-gray-700 space-y-2 font-medium">
+            <li>
+              <i class="fa-solid fa-check text-green-5 Mach mr-2"></i> Routers,
+              Managed Switches & Firewalls
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Cat6/Cat7
+              Copper & Optical Fiber Cables
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Server
+              Racks, Patch Panels & PoE Injectors
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div
+          class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition"
+        >
+          <div
+            class="w-12 h-12 bg-gold-50 text-ramaGold bg-amber-50 rounded-lg flex items-center justify-center text-xl mb-6"
+          >
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-3">SLA Hardware Maintenance</h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Proactive maintenance agreements ensuring guaranteed rapid response
+            times, routine health checks, and quick issue resolution.
+          </p>
+          <ul class="text-xs text-gray-700 space-y-2 font-medium">
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Guaranteed
+              &lt;4-Hour Emergency Response
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Preventive
+              Hardware Audits & Firmware Updates
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              Configuration Backups & Network Cleanup
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div
+          class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition"
+        >
+          <div
+            class="w-12 h-12 bg-green-50 text-green-700 rounded-lg flex items-center justify-center text-xl mb-6"
+          >
+            <i class="fa-solid fa-battery-full"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Power & Spare Swap Protection</h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Tailored local protections designed for the Ethiopian operating
+            environment, safeguarding equipment against power grid volatility.
+          </p>
+          <ul class="text-xs text-gray-700 space-y-2 font-medium">
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Dedicated
+              Local Hardware Swap Pool
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Heavy-Duty
+              APC/Schneider UPS Battery Integration
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green-500 mr-2"></i> Voltage
+              Spike & Surge Suppression Standards
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLA Tier Comparison Table -->
+    <section id="slas" class="bg-slate-100 py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-ramaBlue mb-3">
+            Structured SLA Maintenance Packages
+          </h2>
+          <p class="text-gray-600 text-sm">
+            Flexible Annual Maintenance Contracts (AMCs) tailored for SMEs,
+            banks, hotels, and healthcare hubs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Bronze Tier -->
+          <div
+            class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <span
+                class="text-xs font-bold text-gray-500 uppercase tracking-widest"
+                >Standard Support</span
+              >
+              <h3 class="text-2xl font-bold text-ramaBlue my-2">Bronze SLA</h3>
+              <p class="text-xs text-gray-500 mb-6">
+                Ideal for small office setups needing regular maintenance.
+              </p>
+              <ul class="text-xs text-gray-700 space-y-3 mb-8">
+                <li class="flex items-center">
+                  <i class="fa-solid fa-clock text-ramaBlue mr-2"></i>
+                  Next-Business-Day On-Site Response
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Quarterly Preventive Hardware Audits
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i> Basic
+                  Remote Helpdesk Support
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i> Standard
+                  Hardware Replacement Assistance
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#audit-form"
+              class="w-full bg-gray-100 hover:bg-gray-200 text-ramaBlue font-bold py-3 text-center rounded-lg text-xs transition"
+            >
+              Select Bronze Tier
+            </a>
+          </div>
+
+          <!-- Silver Tier (Featured) -->
+          <div
+            class="bg-white rounded-2xl p-8 border-2 border-ramaGold shadow-xl flex flex-col justify-between relative transform md:-translate-y-2"
+          >
+            <span
+              class="absolute top-0 right-8 transform -translate-y-1/2 bg-ramaGold text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+            >
+              Most Popular
+            </span>
+            <div>
+              <span
+                class="text-xs font-bold text-ramaGold uppercase tracking-widest"
+                >Business Critical</span
+              >
+              <h3 class="text-2xl font-bold text-ramaBlue my-2">Silver SLA</h3>
+              <p class="text-xs text-gray-500 mb-6">
+                Designed for growing commercial firms & office complexes.
+              </p>
+              <ul class="text-xs text-gray-700 space-y-3 mb-8">
+                <li class="flex items-center font-bold text-ramaBlue">
+                  <i class="fa-solid fa-bolt text-ramaGold mr-2"></i> &lt;4-Hour
+                  On-Site Emergency Guarantee
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i> Monthly
+                  Preventive Hardware Checks
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Business-Hours NOC Network Monitoring
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Temporary Hardware Swap from Spare Pool
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#audit-form"
+              class="w-full bg-ramaGold hover:bg-yellow-600 text-white font-bold py-3 text-center rounded-lg text-xs shadow transition"
+            >
+              Select Silver Tier
+            </a>
+          </div>
+
+          <!-- Gold Tier -->
+          <div
+            class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <span
+                class="text-xs font-bold text-gray-500 uppercase tracking-widest"
+                >High Reliability</span
+              >
+              <h3 class="text-2xl font-bold text-ramaBlue my-2">Gold SLA</h3>
+              <p class="text-xs text-gray-500 mb-6">
+                For banks, hospitals, & high-uptime enterprise networks.
+              </p>
+              <ul class="text-xs text-gray-700 space-y-3 mb-8">
+                <li class="flex items-center font-bold text-ramaBlue">
+                  <i class="fa-solid fa-bolt text-red-500 mr-2"></i> &lt;2-Hour
+                  Priority On-Site Dispatch
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i> 24/7/365
+                  Proactive NOC Monitoring
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Dedicated Hot-Swappable Active Gear Reserved
+                </li>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                  Bi-Weekly Network & Power Audits
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#audit-form"
+              class="w-full bg-ramaBlue hover:bg-slate-900 text-white font-bold py-3 text-center rounded-lg text-xs transition"
+            >
+              Select Gold Tier
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment Catalog -->
+    <section id="hardware" class="py-20 max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-ramaBlue mb-3">
+          Equipment Catalog
+        </h2>
+        <p class="text-gray-600 text-sm max-w-2xl mx-auto">
+          Reliable networking hardware and support materials stocked for fast
+          deployment across Addis Ababa businesses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="text-ramaBlue text-xl mb-3">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Core Switching</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Cisco, MikroTik, and enterprise-grade switches for offices,
+            branches, and data rooms.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="text-ramaBlue text-xl mb-3">
+            <i class="fa-solid fa-route"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Routing & Security</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Firewalls, routers, and secure edge devices built for resilient
+            connectivity and uptime.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="text-ramaBlue text-xl mb-3">
+            <i class="fa-solid fa-cable-car"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Structured Cabling</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Cat6 / Cat7 copper and fiber solutions for clean installations and
+            long-term performance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About RAMA -->
+    <section id="about" class="bg-white py-20 px-4">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <div>
+          <span
+            class="inline-block bg-ramaBlue/5 text-ramaBlue text-xs font-bold px-3 py-1 rounded-full mb-4 border border-ramaBlue/10"
+          >
+            ABOUT RAMA
+          </span>
+          <h2 class="text-3xl font-extrabold text-ramaBlue mb-4">
+            Local expertise, faster service, and trusted supply.
+          </h2>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            RAMA Computer & Network Solution supports businesses with practical
+            IT infrastructure services: hardware sourcing, onsite
+            troubleshooting, and recurring SLA maintenance. We understand the
+            realities of the Ethiopian market and deliver solutions that keep
+            operations stable.
+          </p>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            From small offices to growing commercial networks, our team focuses
+            on reliability, uptime, and responsive support that reduces costly
+            downtime.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-ramaGray rounded-2xl p-6 border border-gray-200">
+            <div class="text-3xl font-black text-ramaBlue mb-2">4h</div>
+            <div
+              class="text-xs font-semibold uppercase tracking-wide text-gray-500"
+            >
+              Emergency response
+            </div>
+          </div>
+          <div class="bg-ramaGray rounded-2xl p-6 border border-gray-200">
+            <div class="text-3xl font-black text-ramaBlue mb-2">24/7</div>
+            <div
+              class="text-xs font-semibold uppercase tracking-wide text-gray-500"
+            >
+              Support readiness
+            </div>
+          </div>
+          <div class="bg-ramaGray rounded-2xl p-6 border border-gray-200">
+            <div class="text-3xl font-black text-ramaBlue mb-2">Local</div>
+            <div
+              class="text-xs font-semibold uppercase tracking-wide text-gray-500"
+            >
+              Stock & dispatch
+            </div>
+          </div>
+          <div class="bg-ramaGray rounded-2xl p-6 border border-gray-200">
+            <div class="text-3xl font-black text-ramaBlue mb-2">100%</div>
+            <div
+              class="text-xs font-semibold uppercase tracking-wide text-gray-500"
+            >
+              SLA focus
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ramaBlue text-white py-12 border-t border-slate-700">
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-xs text-gray-300"
+      >
+        <div>
+          <h4 class="font-bold text-sm text-white mb-3">RAMA Solutions</h4>
+          <p class="leading-relaxed mb-4">
+            RAMA Computer and Network Solution provides certified IT hardware
+            supply, network deployment, and SLA maintenance in Addis Ababa,
+            Ethiopia.
+          </p>
+          <p class="text-ramaGold font-semibold">
+            &copy; 2026 RAMA Computer & Network Solution.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-white mb-3">Core Offerings</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#services" class="hover:text-white"
+                >Hardware Procurement</a
+              >
+            </li>
+            <li>
+              <a href="#services" class="hover:text-white"
+                >Structured Cabling Supplies</a
+              >
+            </li>
+            <li>
+              <a href="#slas" class="hover:text-white"
+                >Annual Maintenance Contracts</a
+              >
+            </li>
+            <li>
+              <a href="#slas" class="hover:text-white"
+                >Emergency Dispatch (&lt;4h)</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-white mb-3">Target Sectors</h4>
+          <ul class="space-y-2">
+            <li>Small & Medium Enterprises (SMEs)</li>
+            <li>Banks & Financial Institutions</li>
+            <li>Hospitals & Medical Facilities</li>
+            <li>Hotels & Commercial Real Estate</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-white mb-3">Contact & Dispatch</h4>
+          <p class="mb-2">
+            <i class="fa-solid fa-location-dot text-ramaGold mr-2"></i> Addis
+            Ababa, Ethiopia
+          </p>
+          <p class="mb-2">
+            <i class="fa-solid fa-phone text-ramaGold mr-2"></i> +251 (0)
+            911-000000
+          </p>
+          <p class="mb-2">
+            <i class="fa-solid fa-envelope text-ramaGold mr-2"></i>
+            info@ramanetworks.et
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      async function submitRamaInquiry(form) {
+        const payload = Object.fromEntries(new FormData(form).entries());
+        payload.preferred_tier = payload.primary_need || 'Annual Maintenance Contract (AMC / SLA)';
+
+        const apiUrl =
+          window.location.protocol === 'file:'
+            ? 'http://127.0.0.1:8001/api/submit-sla'
+            : `${window.location.origin}/api/submit-sla`;
+        const endpoints = [apiUrl];
+
+        let lastError;
+
+        for (const endpoint of endpoints) {
+          try {
+            const response = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+              alert(data.message || 'Thank you! A RAMA network engineer will contact you shortly.');
+              form.reset();
+              return;
+            }
+
+            lastError = new Error(data.message || 'The server could not save your request.');
+          } catch (error) {
+            lastError = error;
+          }
+        }
+
+        console.error(lastError);
+        alert('Your request was not submitted. Start the RAMA backend and try again. ' + lastError.message);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-rama-form]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            submitRamaInquiry(form);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

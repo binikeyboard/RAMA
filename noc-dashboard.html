@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAMA NOC Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ramaBlue: "#0F2C59",
+              ramaGold: "#D8A25E",
+              ramaDark: "#0B1D3A",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <section
+      id="login-view"
+      class="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-950 via-ramaBlue to-slate-900 px-4"
+    >
+      <div class="w-full max-w-md rounded-2xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur">
+        <div class="mb-8 text-center">
+          <div class="mb-3 inline-block rounded-xl border border-ramaGold bg-ramaBlue px-4 py-3 text-2xl font-extrabold tracking-widest">
+            RAMA
+          </div>
+          <h1 class="text-2xl font-extrabold">NOC Control Portal</h1>
+          <p class="mt-2 text-sm text-slate-300">Addis Ababa operations and SLA monitoring</p>
+        </div>
+        <div id="login-error" class="mb-4 hidden rounded-lg border border-red-800/50 bg-red-950/50 p-3 text-sm text-red-200" role="alert"></div>
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label for="username" class="mb-1 block text-sm font-semibold text-slate-200">Username</label>
+            <input id="username" name="username" autocomplete="username" required class="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-3 text-white outline-none focus:border-ramaGold focus:ring-2 focus:ring-ramaGold/30" />
+          </div>
+          <div>
+            <label for="password" class="mb-1 block text-sm font-semibold text-slate-200">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-3 text-white outline-none focus:border-ramaGold focus:ring-2 focus:ring-ramaGold/30" />
+          </div>
+          <button type="submit" class="w-full rounded-lg bg-ramaGold px-4 py-3 font-bold text-white transition hover:bg-yellow-600">
+            Sign in securely
+          </button>
+        </form>
+        <p class="mt-6 text-center text-xs text-slate-400">Worker accounts are read-only. Managers can add and delete inquiries.</p>
+      </div>
+    </section>
+
+    <div id="dashboard-view" class="hidden min-h-screen flex-col">
+      <header class="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/95 backdrop-blur">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+          <div class="flex items-center gap-3">
+            <span class="rounded border border-ramaGold bg-ramaBlue px-2.5 py-1 font-extrabold tracking-wide">RAMA</span>
+            <div>
+              <p class="font-bold leading-tight">NOC Dashboard</p>
+              <p class="text-[11px] text-slate-400">MySQL SLA and audit operations</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="hidden text-right text-xs sm:block">
+              <p id="user-display" class="font-semibold"></p>
+              <p id="role-display" class="mt-0.5 uppercase tracking-wide text-ramaGold"></p>
+            </div>
+            <button id="refresh-button" type="button" class="rounded-lg border border-slate-700 px-3 py-2 text-xs font-semibold hover:bg-slate-800">Refresh</button>
+            <button id="logout-button" type="button" class="rounded-lg bg-slate-800 px-3 py-2 text-xs font-semibold hover:bg-slate-700">Sign out</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto w-full max-w-7xl flex-1 space-y-7 px-4 py-8">
+        <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-ramaGold">Operations overview</p>
+            <h1 class="mt-1 text-3xl font-extrabold">SLA inquiries &amp; audits</h1>
+            <p class="mt-2 text-sm text-slate-400">Live records from the RAMA SLA MySQL database.</p>
+          </div>
+          <p id="last-updated" class="text-xs text-slate-500"></p>
+        </div>
+
+        <div id="dashboard-error" class="hidden rounded-lg border border-red-800/50 bg-red-950/50 p-3 text-sm text-red-200" role="alert"></div>
+        <div id="dashboard-notice" class="hidden rounded-lg border border-green-800/50 bg-green-950/40 p-3 text-sm text-green-200" role="status"></div>
+
+        <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Database summary">
+          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5 shadow">
+            <p class="text-sm text-slate-400">Total inquiries</p>
+            <p id="metric-total" class="mt-2 text-3xl font-extrabold text-white">--</p>
+          </article>
+          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5 shadow">
+            <p class="text-sm text-slate-400">Pending audits</p>
+            <p id="metric-pending" class="mt-2 text-3xl font-extrabold text-amber-400">--</p>
+          </article>
+          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5 shadow">
+            <p class="text-sm text-slate-400">Active contracts</p>
+            <p id="metric-active" class="mt-2 text-3xl font-extrabold text-green-400">--</p>
+          </article>
+          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5 shadow">
+            <p class="text-sm text-slate-400">Gold SLA inquiries</p>
+            <p id="metric-gold" class="mt-2 text-3xl font-extrabold text-ramaGold">--</p>
+          </article>
+        </section>
+
+        <section id="manager-add-panel" class="hidden rounded-xl border border-slate-800 bg-slate-900 p-5 shadow">
+          <div class="mb-4">
+            <h2 class="text-lg font-bold">Add SLA inquiry</h2>
+            <p class="mt-1 text-xs text-slate-400">Manager-only action. Required information is marked with *.</p>
+          </div>
+          <form id="add-form" class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div>
+              <label for="company-name" class="mb-1 block text-xs font-semibold">Company *</label>
+              <input id="company-name" name="company_name" required maxlength="150" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div>
+              <label for="contact-person" class="mb-1 block text-xs font-semibold">Contact person *</label>
+              <input id="contact-person" name="contact_person" required maxlength="100" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div>
+              <label for="phone-number" class="mb-1 block text-xs font-semibold">Phone number *</label>
+              <input id="phone-number" name="phone_number" required maxlength="30" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div>
+              <label for="sub-city" class="mb-1 block text-xs font-semibold">Sub-city *</label>
+              <input id="sub-city" name="sub_city" required maxlength="50" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div>
+              <label for="email-address" class="mb-1 block text-xs font-semibold">Email</label>
+              <input id="email-address" name="email" type="email" maxlength="100" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div>
+              <label for="contact-title" class="mb-1 block text-xs font-semibold">Contact title</label>
+              <input id="contact-title" name="contact_title" maxlength="100" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div>
+              <label for="preferred-tier" class="mb-1 block text-xs font-semibold">SLA tier</label>
+              <select id="preferred-tier" name="preferred_tier" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm">
+                <option value="SILVER">Silver</option>
+                <option value="GOLD">Gold</option>
+                <option value="BRONZE">Bronze</option>
+                <option value="CUSTOM">Custom</option>
+              </select>
+            </div>
+            <div class="md:col-span-2 xl:col-span-2">
+              <label for="specific-address" class="mb-1 block text-xs font-semibold">Specific address / requirements</label>
+              <input id="specific-address" name="specific_address" maxlength="500" class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm outline-none focus:border-ramaGold" />
+            </div>
+            <div class="md:col-span-2 xl:col-span-3">
+              <button type="submit" class="rounded-lg bg-ramaGold px-5 py-2.5 text-sm font-bold text-white hover:bg-yellow-600">Add inquiry</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow">
+          <div class="flex flex-col justify-between gap-3 border-b border-slate-800 p-5 md:flex-row md:items-center">
+            <div>
+              <h2 class="text-lg font-bold">SLA inquiry log</h2>
+              <p id="permission-note" class="mt-1 text-xs text-slate-400"></p>
+            </div>
+            <label class="flex items-center gap-2 text-xs text-slate-400">
+              Status
+              <select id="status-filter" class="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-slate-100">
+                <option value="ALL">All statuses</option>
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Postponed">Postponed</option>
+                <option value="Done">Done</option>
+              </select>
+            </label>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-left text-xs">
+              <thead class="bg-slate-950 text-[10px] uppercase tracking-wider text-slate-400">
+                <tr>
+                  <th class="whitespace-nowrap px-4 py-3">Reference / received</th>
+                  <th class="px-4 py-3">Company / contact</th>
+                  <th class="px-4 py-3">Sector / location</th>
+                  <th class="px-4 py-3">Tier / response</th>
+                  <th class="px-4 py-3">Devices</th>
+                  <th class="px-4 py-3">Status</th>
+                  <th id="actions-heading" class="hidden px-4 py-3 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="inquiry-rows" class="divide-y divide-slate-800"></tbody>
+            </table>
+          </div>
+          <p id="inquiry-empty" class="hidden p-8 text-center text-sm text-slate-400">No inquiries match this filter.</p>
+        </section>
+
+        <section class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow">
+          <div class="border-b border-slate-800 p-5">
+            <h2 class="text-lg font-bold">Upcoming audit schedule</h2>
+            <p class="mt-1 text-xs text-slate-400">Sourced from audit_schedules and linked SLA inquiries.</p>
+          </div>
+          <div id="audit-list" class="grid grid-cols-1 gap-3 p-5 lg:grid-cols-2"></div>
+          <p id="audit-empty" class="hidden px-5 pb-5 text-sm text-slate-400">No upcoming scheduled audits.</p>
+        </section>
+      </main>
+      <footer class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
+        &copy; 2026 RAMA Computer &amp; Network Solution · Internal operations
+      </footer>
+    </div>
+
+    <script>
+      const apiBase =
+        window.location.protocol === "file:"
+          ? "http://127.0.0.1:8001"
+          : window.location.origin;
+      let csrfToken = "";
+      let currentRole = "";
+      let allInquiries = [];
+
+      const loginView = document.getElementById("login-view");
+      const dashboardView = document.getElementById("dashboard-view");
+      const loginError = document.getElementById("login-error");
+      const dashboardError = document.getElementById("dashboard-error");
+      const dashboardNotice = document.getElementById("dashboard-notice");
+
+      function showMessage(element, message) {
+        element.textContent = message;
+        element.classList.remove("hidden");
+      }
+
+      function hideMessage(element) {
+        element.textContent = "";
+        element.classList.add("hidden");
+      }
+
+      async function apiRequest(path, options) {
+        let response;
+        try {
+          response = await fetch(apiBase + path, Object.assign({ credentials: "include" }, options || {}));
+        } catch (error) {
+          throw new Error("Cannot connect to the RAMA API. Start it with `py -3 python\\sla_form_backend.py` from the web folder, then open http://127.0.0.1:8001/noc-dashboard.html.");
+        }
+
+        const contentType = response.headers.get("content-type") || "";
+        if (contentType.indexOf("application/json") === -1) {
+          throw new Error("The API returned a non-JSON response (HTTP " + response.status + "). Check that the updated backend is running.");
+        }
+
+        let result;
+        try {
+          result = await response.json();
+        } catch (error) {
+          throw new Error("The API response could not be decoded.");
+        }
+
+        if (!response.ok) {
+          if (response.status === 401) {
+            showLogin();
+          }
+          throw new Error(result.message || "The API request failed.");
+        }
+        return result;
+      }
+
+      function showLogin() {
+        dashboardView.classList.add("hidden");
+        dashboardView.classList.remove("flex");
+        loginView.classList.remove("hidden");
+      }
+
+      function showDashboard(session) {
+        csrfToken = session.csrf_token || "";
+        currentRole = session.role || "";
+        document.getElementById("user-display").textContent = session.username || "";
+        document.getElementById("role-display").textContent = currentRole;
+        document.getElementById("manager-add-panel").classList.toggle("hidden", currentRole !== "manager");
+        document.getElementById("actions-heading").classList.toggle("hidden", currentRole !== "manager");
+        document.getElementById("permission-note").textContent =
+          currentRole === "manager"
+            ? "Manager access: read, add, update status, and delete inquiries."
+            : "Worker access: read-only.";
+        loginView.classList.add("hidden");
+        dashboardView.classList.remove("hidden");
+        dashboardView.classList.add("flex");
+        loadDashboard();
+      }
+
+      function setMetric(id, value) {
+        document.getElementById(id).textContent = Number(value || 0).toLocaleString();
+      }
+
+      function appendCell(row, value, className) {
+        const cell = document.createElement("td");
+        cell.className = className || "px-4 py-3 align-top";
+        cell.textContent = value === null || value === undefined || value === "" ? "-" : String(value);
+        row.appendChild(cell);
+        return cell;
+      }
+
+      function statusClass(status) {
+        if (status === "Active" || status === "CONTRACT_ACTIVE") return "border-green-800 bg-green-950 text-green-300";
+        if (status === "Pending" || status === "PENDING_AUDIT" || status === "AUDIT_SCHEDULED" || status === "PROPOSAL_SENT") return "border-amber-800 bg-amber-950 text-amber-300";
+        if (status === "Postponed" || status === "CANCELLED") return "border-red-800 bg-red-950 text-red-300";
+        if (status === "Done") return "border-sky-800 bg-sky-950 text-sky-300";
+        return "border-blue-800 bg-blue-950 text-blue-300";
+      }
+
+      function canonicalStatus(status) {
+        if (status === "CONTRACT_ACTIVE") return "Active";
+        if (status === "PENDING_AUDIT" || status === "AUDIT_SCHEDULED" || status === "PROPOSAL_SENT") return "Pending";
+        if (status === "CANCELLED") return "Postponed";
+        return ["Active", "Pending", "Postponed", "Done"].indexOf(status) >= 0
+          ? status
+          : "Pending";
+      }
+
+      function renderInquiries() {
+        const filter = document.getElementById("status-filter").value;
+        const filtered = allInquiries.filter((inquiry) =>
+          filter === "ALL" || canonicalStatus(inquiry.inquiry_status) === filter
+        );
+        const tbody = document.getElementById("inquiry-rows");
+        tbody.replaceChildren();
+
+        filtered.forEach((inquiry) => {
+          const row = document.createElement("tr");
+          row.className = "hover:bg-slate-800/70";
+          const referenceCell = appendCell(row, inquiry.inquiry_ref, "whitespace-nowrap px-4 py-3 align-top font-mono font-bold text-ramaGold");
+          const received = document.createElement("span");
+          received.className = "mt-1 block font-sans text-[10px] font-normal text-slate-500";
+          received.textContent = inquiry.created_at || "";
+          referenceCell.appendChild(received);
+
+          const companyCell = appendCell(row, inquiry.company_name, "min-w-48 px-4 py-3 align-top font-semibold text-white");
+          const contact = document.createElement("span");
+          contact.className = "mt-1 block font-normal text-slate-400";
+          contact.textContent = [inquiry.contact_person, inquiry.contact_title].filter(Boolean).join(" · ");
+          companyCell.appendChild(contact);
+          const phone = document.createElement("span");
+          phone.className = "mt-1 block font-mono text-[10px] font-normal text-slate-500";
+          phone.textContent = inquiry.phone_number || "";
+          companyCell.appendChild(phone);
+
+          const locationCell = appendCell(row, inquiry.sector_name || inquiry.sector_code);
+          const location = document.createElement("span");
+          location.className = "mt-1 block text-slate-400";
+          location.textContent = [inquiry.sub_city, inquiry.woreda].filter(Boolean).join(" · ");
+          locationCell.appendChild(location);
+
+          const tierCell = appendCell(row, inquiry.tier_name);
+          const response = document.createElement("span");
+          response.className = "mt-1 block text-slate-400";
+          response.textContent = inquiry.response_time_p1 || "";
+          tierCell.appendChild(response);
+
+          appendCell(row, inquiry.total_estimated_devices || 0, "px-4 py-3 align-top text-center");
+
+          const statusCell = appendCell(row, "");
+          if (currentRole === "manager") {
+            const statusSelect = document.createElement("select");
+            statusSelect.className = "rounded border bg-slate-950 px-2 py-1.5 text-[10px] font-bold " + statusClass(canonicalStatus(inquiry.inquiry_status));
+            statusSelect.setAttribute("aria-label", "Status for " + inquiry.inquiry_ref);
+            ["Active", "Pending", "Postponed", "Done"].forEach((status) => {
+              const option = document.createElement("option");
+              option.value = status;
+              option.textContent = status;
+              option.selected = status === canonicalStatus(inquiry.inquiry_status);
+              statusSelect.appendChild(option);
+            });
+            statusSelect.addEventListener("change", () => updateInquiryStatus(inquiry, statusSelect));
+            statusCell.appendChild(statusSelect);
+          } else {
+            const badge = document.createElement("span");
+            badge.className = "inline-block whitespace-nowrap rounded border px-2 py-1 text-[10px] font-bold " + statusClass(canonicalStatus(inquiry.inquiry_status));
+            badge.textContent = canonicalStatus(inquiry.inquiry_status);
+            statusCell.appendChild(badge);
+          }
+
+          if (currentRole === "manager") {
+            const actionCell = appendCell(row, "", "whitespace-nowrap px-4 py-3 text-right");
+            const deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.className = "rounded border border-red-900 px-2.5 py-1.5 text-[10px] font-semibold text-red-300 hover:bg-red-950";
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", () => deleteInquiry(inquiry.inquiry_id, inquiry.inquiry_ref));
+            actionCell.appendChild(deleteButton);
+          }
+          tbody.appendChild(row);
+        });
+
+        document.getElementById("inquiry-empty").classList.toggle("hidden", filtered.length !== 0);
+      }
+
+      function renderAudits(audits) {
+        const container = document.getElementById("audit-list");
+        container.replaceChildren();
+        audits.forEach((audit) => {
+          const card = document.createElement("article");
+          card.className = "rounded-lg border border-slate-800 bg-slate-950 p-4";
+          const heading = document.createElement("div");
+          heading.className = "flex flex-wrap items-start justify-between gap-2";
+          const title = document.createElement("h3");
+          title.className = "font-bold text-white";
+          title.textContent = audit.company_name;
+          const status = document.createElement("span");
+          status.className = "rounded border border-blue-800 bg-blue-950 px-2 py-1 text-[10px] font-bold text-blue-300";
+          status.textContent = audit.audit_status;
+          heading.appendChild(title);
+          heading.appendChild(status);
+          card.appendChild(heading);
+
+          const details = document.createElement("p");
+          details.className = "mt-2 text-xs text-ramaGold";
+          details.textContent = [audit.audit_date, audit.audit_time, audit.assigned_engineer_name].filter(Boolean).join(" · ");
+          card.appendChild(details);
+
+          const reference = document.createElement("p");
+          reference.className = "mt-1 text-xs text-slate-400";
+          reference.textContent = audit.inquiry_ref;
+          card.appendChild(reference);
+
+          if (audit.findings_summary) {
+            const findings = document.createElement("p");
+            findings.className = "mt-2 text-xs text-slate-300";
+            findings.textContent = audit.findings_summary;
+            card.appendChild(findings);
+          }
+          container.appendChild(card);
+        });
+        document.getElementById("audit-empty").classList.toggle("hidden", audits.length !== 0);
+      }
+
+      async function loadDashboard() {
+        hideMessage(dashboardError);
+        try {
+          const result = await apiRequest("/api/noc/dashboard");
+          const summary = result.summary || {};
+          allInquiries = result.inquiries || [];
+          setMetric("metric-total", summary.total_inquiries);
+          setMetric("metric-pending", summary.pending_audits);
+          setMetric("metric-active", summary.active_contracts);
+          setMetric("metric-gold", summary.gold_clients);
+          renderInquiries();
+          renderAudits(result.audits || []);
+          document.getElementById("last-updated").textContent =
+            "Updated " + new Date().toLocaleString();
+        } catch (error) {
+          showMessage(dashboardError, error.message);
+        }
+      }
+
+      async function deleteInquiry(id, reference) {
+        if (!window.confirm("Delete inquiry " + reference + "? This also removes its linked audit schedule.")) {
+          return;
+        }
+        hideMessage(dashboardError);
+        try {
+          await apiRequest("/api/noc/inquiries/" + encodeURIComponent(id), {
+            method: "DELETE",
+            headers: { "X-CSRF-Token": csrfToken },
+          });
+          showMessage(dashboardNotice, "Inquiry " + reference + " deleted.");
+          await loadDashboard();
+        } catch (error) {
+          showMessage(dashboardError, error.message);
+        }
+      }
+
+      async function updateInquiryStatus(inquiry, statusSelect) {
+        const previousStatus = canonicalStatus(inquiry.inquiry_status);
+        const nextStatus = statusSelect.value;
+        statusSelect.disabled = true;
+        hideMessage(dashboardError);
+        try {
+          await apiRequest(
+            "/api/noc/inquiries/" + encodeURIComponent(inquiry.inquiry_id) + "/status",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-Token": csrfToken,
+              },
+              body: JSON.stringify({ status: nextStatus }),
+            },
+          );
+          inquiry.inquiry_status = nextStatus;
+          showMessage(dashboardNotice, inquiry.inquiry_ref + " status changed to " + nextStatus + ".");
+          await loadDashboard();
+        } catch (error) {
+          statusSelect.value = previousStatus;
+          showMessage(dashboardError, error.message);
+        } finally {
+          statusSelect.disabled = false;
+        }
+      }
+
+      document.getElementById("login-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        hideMessage(loginError);
+        const values = Object.fromEntries(new FormData(form).entries());
+        try {
+          const session = await apiRequest("/api/noc/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(values),
+          });
+          form.reset();
+          showDashboard(session);
+        } catch (error) {
+          showMessage(loginError, error.message);
+        }
+      });
+
+      document.getElementById("add-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        hideMessage(dashboardError);
+        const values = Object.fromEntries(new FormData(form).entries());
+        try {
+          const result = await apiRequest("/api/noc/inquiries", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRF-Token": csrfToken,
+            },
+            body: JSON.stringify(values),
+          });
+          form.reset();
+          showMessage(dashboardNotice, "Inquiry added: " + result.inquiry_ref);
+          await loadDashboard();
+        } catch (error) {
+          showMessage(dashboardError, error.message);
+        }
+      });
+
+      document.getElementById("status-filter").addEventListener("change", renderInquiries);
+      document.getElementById("refresh-button").addEventListener("click", loadDashboard);
+
+      document.getElementById("logout-button").addEventListener("click", async () => {
+        try {
+          await apiRequest("/api/noc/logout", {
+            method: "POST",
+            headers: { "X-CSRF-Token": csrfToken },
+          });
+        } catch (error) {
+          console.error(error);
+        }
+        csrfToken = "";
+        currentRole = "";
+        allInquiries = [];
+        showLogin();
+      });
+
+      apiRequest("/api/noc/session")
+        .then((session) => {
+          if (session.authenticated) {
+            showDashboard(session);
+          }
+        })
+        .catch((error) => showMessage(loginError, error.message));
+    </script>
+  </body>
+</html>

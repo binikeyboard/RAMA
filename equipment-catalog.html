@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      IT Hardware Equipment Catalog | RAMA Computer & Network Solution
+    </title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ramaBlue: "#0F2C59",
+              ramaGold: "#D8A25E",
+              ramaGray: "#F8F9FA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Top Announcement Bar -->
+    <div
+      class="bg-ramaBlue text-white text-xs py-2 px-4 text-center font-medium"
+    >
+      <i class="fa-solid fa-boxes-packing text-ramaGold mr-1"></i>
+      Local Buffer Stock Available in Addis Ababa | Direct Wholesale Inquiries:
+      +251 (0) 911-000000
+    </div>
+
+    <!-- Navigation Bar (Connected across all pages) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <a href="index.html" class="flex items-center space-x-3">
+          <div
+            class="bg-ramaBlue text-white p-3 rounded-lg font-bold text-xl tracking-wider"
+          >
+            RAMA
+          </div>
+          <div>
+            <span class="block text-lg font-bold text-ramaBlue leading-none"
+              >RAMA Solutions</span
+            >
+            <span class="text-xs text-gray-500 font-medium"
+              >Computer & Network Solution</span
+            >
+          </div>
+        </a>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700"
+        >
+          <a href="index.html" class="hover:text-ramaBlue transition">Home</a>
+          <a
+            href="hardware-maintenance.html"
+            class="hover:text-ramaBlue transition"
+            >Hardware & Maintenance</a
+          >
+          <a
+            href="sla-support-tiers.html"
+            class="hover:text-ramaBlue transition"
+            >SLA Support Tiers</a
+          >
+          <a
+            href="equipment-catalog.html"
+            class="text-ramaBlue font-bold border-b-2 border-ramaGold pb-1"
+            >Equipment Catalog</a
+          >
+        </div>
+        <div>
+          <a
+            href="#order-form"
+            class="bg-ramaGold hover:bg-yellow-600 text-white font-bold py-2.5 px-5 rounded-lg text-sm shadow transition"
+          >
+            Request Parts Quote
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Breadcrumbs Section -->
+    <section
+      class="bg-slate-900 text-white py-14 px-4 border-b border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="text-xs text-ramaGold font-medium mb-2 flex items-center space-x-2"
+        >
+          <a href="index.html" class="hover:underline">Home</a>
+          <span>/</span>
+          <a href="hardware-maintenance.html" class="hover:underline"
+            >Hardware & Maintenance</a
+          >
+          <span>/</span>
+          <span class="text-gray-300">Equipment Catalog</span>
+        </div>
+        <h1 class="text-3xl lg:text-4xl font-extrabold mb-3">
+          Certified Networking Hardware Catalog
+        </h1>
+        <p class="text-gray-300 text-sm max-w-3xl">
+          Certified active components, passive structured cabling materials,
+          server racks, and power backup hardware stored in local safety stock
+          across Addis Ababa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter & Search Bar Section -->
+    <section class="bg-white border-b border-gray-200 py-6 px-4">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <!-- Category Pills -->
+        <div class="flex flex-wrap gap-2 text-xs">
+          <a
+            href="equipment-catalog.html"
+            class="bg-ramaBlue text-white px-4 py-2 rounded-full font-semibold shadow-sm"
+            >All Equipment</a
+          >
+          <a
+            href="switches-routers.html"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium transition"
+            >Switches &amp; Routers</a
+          >
+          <a
+            href="cabling-fiber.html"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium transition"
+            >Cat6/Cat7 &amp; Fiber</a
+          >
+          <a
+            href="server-racks-panels.html"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium transition"
+            >Server Racks &amp; Panels</a
+          >
+          <a
+            href="ups-pdus.html"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium transition"
+            >UPS &amp; PDUs</a
+          >
+        </div>
+        <!-- Search Input -->
+        <div class="relative w-full md:w-64">
+          <input
+            type="text"
+            placeholder="Search product / model..."
+            class="w-full text-xs p-2.5 pl-8 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-ramaBlue"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass text-gray-400 text-xs absolute left-2.5 top-3"
+          ></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Item 1: Managed Switch -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-ramaBlue text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Active Gear</span
+              >
+              <i
+                class="fa-solid fa-network-wired text-4xl text-ramaBlue py-4"
+              ></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >Cisco / MikroTik</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Managed PoE+ Switches
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                24-Port & 48-Port Gigabit Layer 2/3 Managed Switches with 10G
+                SFP+ Uplinks.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i> IEEE
+                  802.3at/af PoE+ Support
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Pre-cleared by ECA / INSA
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 2: Enterprise Router & Firewall -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Security</span
+              >
+              <i
+                class="fa-solid fa-shield-halved text-4xl text-red-600 py-4"
+              ></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >MikroTik / Cisco</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Enterprise Security Gateways
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                CCR Cloud Core Routers and NGFW Firewalls with dual WAN ISP
+                failover support.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i> Dual
+                  Ethio Telecom / Safaricom WAN
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Hardware Encrypted VPN Tunnels
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 3: Copper Cabling Reels -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-green-700 text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Passive Supply</span
+              >
+              <i class="fa-solid fa-ethernet text-4xl text-green-700 py-4"></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >Schneider / D-Link</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Cat6 / Cat7 Copper Cabling (305m)
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                High-purity solid copper 23AWG UTP/FTP cabling boxes certified
+                to 250MHz/600MHz.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i> Fluke
+                  Channel Tested
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Low-Smoke Zero-Halogen (LSZH)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 4: Fiber Optic Cables -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Optical Fiber</span
+              >
+              <i
+                class="fa-solid fa-circle-nodes text-4xl text-amber-600 py-4"
+              ></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >Corning / OptiCore</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Single-Mode & Multi-Mode Fiber
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                Armored outdoor and indoor optical fiber reels, pigtails, and
+                LC/SC patch cords.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i> OS2
+                  Single-Mode & OM3 Multi-Mode
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i> SFP+ /
+                  SFP28 Transceivers Stocked
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 5: Enterprise Wi-Fi Access Points -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-ramaBlue text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Wireless</span
+              >
+              <i class="fa-solid fa-wifi text-4xl text-ramaBlue py-4"></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >Ubiquiti / Cisco Catalyst</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Enterprise Wi-Fi 6 / 7 APs
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                High-density ceiling-mount and outdoor wireless access points
+                with PoE integration.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Multi-Gigabit Throughput
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Centralized Controller Management
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 6: Server Cabinets & Racks -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-slate-700 text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Racks & Enclosures</span
+              >
+              <i class="fa-solid fa-server text-4xl text-slate-700 py-4"></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >Toten / APC</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Server Racks & Patch Panels
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                Wall-mount (6U/9U/12U) and floor-standing (22U/42U) enclosures
+                with cable managers.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Tempered Glass Front Doors
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  24-Port & 48-Port Patch Panels
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 7: UPS Backup Systems -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Power Resilience</span
+              >
+              <i
+                class="fa-solid fa-car-battery text-4xl text-amber-700 py-4"
+              ></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >APC / Schneider Electric</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Smart-UPS Systems (1kVA - 10kVA)
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                Line-interactive and online double-conversion UPS battery units
+                for server rack protection.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Voltage Spike Protection
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Extended Battery Runtime Modules
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 8: Keystones & Patch Cords -->
+        <div
+          class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition flex flex-col justify-between"
+        >
+          <div>
+            <div
+              class="bg-gray-100 p-6 text-center border-b border-gray-100 relative"
+            >
+              <span
+                class="absolute top-3 left-3 bg-gray-700 text-white text-[10px] font-bold px-2 py-0.5 rounded"
+                >Consumables</span
+              >
+              <i class="fa-solid fa-plug text-4xl text-gray-700 py-4"></i>
+            </div>
+            <div class="p-5">
+              <span
+                class="text-[10px] font-bold text-ramaGold uppercase tracking-wider"
+                >AMP / Legrand</span
+              >
+              <h3 class="font-bold text-sm text-ramaBlue mb-2">
+                Keystones, Faceplates & Patch Cords
+              </h3>
+              <p class="text-xs text-gray-500 mb-4">
+                Toolless Cat6/Cat6A keystone jacks, dual faceplates, and
+                1m/3m/5m factory patch cables.
+              </p>
+              <ul
+                class="text-[11px] text-gray-600 space-y-1 mb-4 border-t pt-3"
+              >
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i>
+                  Gold-Plated RJ45 Pins
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-green-500 mr-1.5"></i> Bulk
+                  Pack Discounts Available
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <a
+              href="#order-form"
+              class="w-full block bg-ramaBlue hover:bg-slate-900 text-white text-center font-bold py-2 rounded text-xs transition"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buffer Stock Guarantee Banner -->
+    <section class="bg-slate-900 text-white py-12 px-4">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div>
+          <span class="text-xs text-ramaGold font-bold uppercase tracking-wider"
+            >Local Supply Chain Advantage</span
+          >
+          <h3 class="text-2xl font-bold mt-1">
+            Bypass Import FX Delays with RAMA's Local Warehouse
+          </h3>
+          <p class="text-xs text-gray-300 max-w-xl mt-1">
+            We maintain a rolling 30-to-60 day local safety stock in Addis Ababa
+            for common cabling materials and active replacement units.
+          </p>
+        </div>
+        <a
+          href="#order-form"
+          class="bg-ramaGold hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg text-xs shadow transition whitespace-nowrap"
+        >
+          Inquire Wholesale Stock
+        </a>
+      </div>
+    </section>
+
+    <!-- Quote / Order Inquiry Form -->
+    <section id="order-form" class="py-16 max-w-4xl mx-auto px-4">
+      <div
+        class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-200"
+      >
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-ramaBlue">
+            Request Hardware Price Quote / Availability
+          </h3>
+          <p class="text-xs text-gray-500 mt-1">
+            Submit required product models or quantities for a fast price
+            quotation in Ethiopian Birr (ETB).
+          </p>
+        </div>
+
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Company / Organization</label
+              >
+              <input
+                type="text"
+                placeholder="e.g. Zemen Commercial Complex"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Contact Person & Phone</label
+              >
+              <input
+                type="text"
+                placeholder="e.g. Samuel Girma (+251 9...)"
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Target Equipment Category</label
+              >
+              <select
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none text-gray-700 font-medium"
+              >
+                <option>Active Switches & Routers (Cisco / MikroTik)</option>
+                <option>Cat6 / Cat7 Copper Cabling Reels (305m)</option>
+                <option>Optical Fiber Cables & Transceivers</option>
+                <option>Server Racks & Patch Panels</option>
+                <option>APC Smart-UPS Systems & PDUs</option>
+                <option>Full Turnkey Material Package</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1"
+                >Purchase Urgency</label
+              >
+              <select
+                class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none text-gray-700 font-medium"
+              >
+                <option>Immediate / Stock Ready (Addis Ababa)</option>
+                <option>Project Order (Within 30 Days)</option>
+                <option>Bulk Import Inquiry</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1"
+              >Required Items & Quantity Details</label
+            >
+            <textarea
+              rows="3"
+              placeholder="Specify required switch port counts, cable box quantities, server rack dimensions, or target delivery location..."
+              class="w-full text-sm p-3 border rounded-lg focus:ring-2 focus:ring-ramaBlue outline-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="button"
+              onclick="
+                alert(
+                  'Thank you for your inquiry! RAMA\'s procurement team will provide a formal quotation within 2 hours.',
+                )
+              "
+              class="w-full bg-ramaBlue hover:bg-slate-900 text-white font-bold py-3.5 rounded-lg text-sm shadow transition"
+            >
+              Submit Parts Quote Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ramaBlue text-white py-10 border-t border-slate-700">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-300"
+      >
+        <div class="mb-4 md:mb-0">
+          <span class="font-bold text-white text-sm"
+            >RAMA Computer & Network Solution</span
+          >
+          <p class="text-gray-400 mt-0.5">
+            Hardware Equipment Catalog | Addis Ababa, Ethiopia
+          </p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="hover:text-ramaGold transition"
+            >Home Page</a
+          >
+          <a
+            href="hardware-maintenance.html"
+            class="hover:text-ramaGold transition"
+            >Hardware & Maintenance</a
+          >
+          <a
+            href="sla-support-tiers.html"
+            class="hover:text-ramaGold transition"
+            >SLA Support Tiers</a
+          >
+          <a
+            href="equipment-catalog.html"
+            class="hover:text-ramaGold transition"
+            >Equipment Catalog</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
